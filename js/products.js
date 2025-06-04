@@ -7,6 +7,7 @@ async function loadProducts() {
 function displayProducts(products) {
   // Find the container where products will be displayed
   const container = document.querySelector("#all-products .container");
+  const fragment = document.createDocumentFragment();
 
   // Iterate over each product and create the HTML structure safely
   products.forEach((product) => {
@@ -19,6 +20,7 @@ function displayProducts(products) {
     pictureDiv.classList.add("product-picture");
     const img = document.createElement("img");
     img.src = product.image;
+    img.loading = "lazy";
     img.alt = `product: ${product.title}`;
     img.width = 250;
     pictureDiv.appendChild(img);
@@ -55,8 +57,9 @@ function displayProducts(products) {
     productElement.appendChild(infoDiv);
 
     // Append the new product element to the container
-    container.appendChild(productElement);
+    fragment.appendChild(productElement);
   });
+  container.appendChild(fragment);
 }
 
 loadProducts();
