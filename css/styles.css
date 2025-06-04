@@ -101,7 +101,7 @@ section.hero img {
     width: 100%;
     height: auto;
     filter: brightness(50%);
-    display: none;
+    display: block;
 }
 
 section.hero img.desktop {
