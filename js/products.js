@@ -29,15 +29,15 @@ function displayProducts(products) {
     const infoDiv = document.createElement("div");
     infoDiv.classList.add("product-info");
 
-    const category = document.createElement("h5");
+    const category = document.createElement("span");
     category.classList.add("categories");
     category.textContent = product.category;
 
-    const title = document.createElement("h4");
+    const title = document.createElement("h3");
     title.classList.add("title");
     title.textContent = product.title;
 
-    const price = document.createElement("h3");
+    const price = document.createElement("div");
     price.classList.add("price");
     const priceSpan = document.createElement("span");
     priceSpan.textContent = `US$ ${product.price}`;
